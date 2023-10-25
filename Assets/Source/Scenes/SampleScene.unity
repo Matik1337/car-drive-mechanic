@@ -1633,7 +1633,6 @@ GameObject:
   - component: {fileID: 8857304168805656241}
   - component: {fileID: 8857304168805656244}
   - component: {fileID: 8857304168805656243}
-  - component: {fileID: 8857304168805656242}
   m_Layer: 0
   m_Name: RTI_Orange
   m_TagString: Untagged
@@ -1668,18 +1667,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8857304168805656242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8857304168805656240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b61d0771f88ec5e429cfb9751810bdf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8857304168805656243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1692,12 +1679,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0f1ec0c8f0d444e9a17f12bffa4699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputManager: {fileID: 8857304168805656242}
+  _input:
+    mode: 1
+    unityReference: {fileID: 0}
+    rawReference:
+      rid: 1986778510100791296
   _wheels:
   - {fileID: 288671741}
   - {fileID: 22653081}
   _maxSteerAngle: 60
   _steerAngleChangeStep: 200
+  references:
+    version: 2
+    RefIds:
+    - rid: 1986778510100791296
+      type: {class: DesktopInput, ns: , asm: Assembly-CSharp}
+      data: 
 --- !u!114 &8857304168805656244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1710,7 +1707,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1598ce0a266e0847834bbff6134e251, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputManager: {fileID: 8857304168805656242}
+  _input:
+    mode: 1
+    unityReference: {fileID: 0}
+    rawReference:
+      rid: 1986778510100791297
   _wheels:
   - {fileID: 288671741}
   - {fileID: 22653081}
@@ -1718,6 +1719,12 @@ MonoBehaviour:
   - {fileID: 1030611882}
   _motorForce: 1000
   _brakeForce: 50000
+  references:
+    version: 2
+    RefIds:
+    - rid: 1986778510100791297
+      type: {class: DesktopInput, ns: , asm: Assembly-CSharp}
+      data: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

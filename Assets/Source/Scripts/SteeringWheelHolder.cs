@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using TNRD;
 using UnityEngine;
 
 public class SteeringWheelHolder : MonoBehaviour
 {
-    [SerializeField] private InputManager _inputManager;
+    [SerializeField] private SerializableInterface<IInput> _input;
     [SerializeField] private List<WheelProvider> _wheels;
     [SerializeField] private float _maxSteerAngle;
     [SerializeField] private float _steerAngleChangeStep;
@@ -12,7 +13,7 @@ public class SteeringWheelHolder : MonoBehaviour
 
     private void Update()
     {
-        _currentAngle = Mathf.MoveTowards(_currentAngle, _inputManager.SteeringWheelValue * _maxSteerAngle,
+        _currentAngle = Mathf.MoveTowards(_currentAngle, _input.Value.SteeringWheelValue() * _maxSteerAngle,
             _steerAngleChangeStep * Time.deltaTime);
         
         foreach (var wheel in _wheels)

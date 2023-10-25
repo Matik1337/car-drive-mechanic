@@ -1,11 +1,19 @@
 using UnityEngine;
 
-public class DesktopInput : InputManager
+public class DesktopInput : IInput
 {
-    private void Update()
+    public bool HandBraking()
     {
-        HandBraking = Input.GetKey(KeyCode.Space);
-        ThrottleValue = Input.GetAxis("Vertical");
-        SteeringWheelValue = Input.GetAxis("Horizontal");
+        return Input.GetKey(KeyCode.Space);
+    }
+
+    public float ThrottleValue()
+    {
+        return Input.GetAxis("Vertical");
+    }
+
+    public float SteeringWheelValue()
+    {
+        return Input.GetAxis("Horizontal");
     }
 }
