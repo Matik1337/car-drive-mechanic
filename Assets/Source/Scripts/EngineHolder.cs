@@ -13,8 +13,8 @@ public class EngineHolder : MonoBehaviour
     {
         foreach (var wheel in _wheels)
         {
-            wheel.SetMotorTorque(_input.Value.ThrottleValue() * _motorForce);
-            wheel.SetBrakeTorque(_input.Value.HandBraking() ? _brakeForce : 0);
+            wheel.SetMotorTorque(_input.Value.ThrottleValue * _motorForce);
+            wheel.SetBrakeTorque(_input.Value.HandBraking ? _brakeForce : 0);
         }
     }
 }

@@ -6,6 +6,8 @@ public class WheelProvider : MonoBehaviour
     [SerializeField] private WheelCollider _wheelCollider;
     [SerializeField] private bool _canSteer;
     
+    public bool CanSteer => _canSteer;
+    
     private void Update()
     {
         UpdateView();
@@ -13,9 +15,6 @@ public class WheelProvider : MonoBehaviour
 
     public void SetSteerAngle(float value)
     {
-        if(!_canSteer)
-            return;
-
         _wheelCollider.steerAngle = value;
     }
 

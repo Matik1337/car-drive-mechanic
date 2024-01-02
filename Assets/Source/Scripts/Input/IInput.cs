@@ -1,6 +1,6 @@
 public interface IInput
 {
-    public bool HandBraking();
-    public float ThrottleValue();
-    public float SteeringWheelValue();
+    public bool HandBraking { get; }
+    public float ThrottleValue { get; }
+    public float SteeringWheelValue { get; }
 }

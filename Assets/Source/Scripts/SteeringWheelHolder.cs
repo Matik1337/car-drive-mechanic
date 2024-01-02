@@ -13,12 +13,13 @@ public class SteeringWheelHolder : MonoBehaviour
 
     private void Update()
     {
-        _currentAngle = Mathf.MoveTowards(_currentAngle, _input.Value.SteeringWheelValue() * _maxSteerAngle,
+        _currentAngle = Mathf.MoveTowards(_currentAngle, _input.Value.SteeringWheelValue * _maxSteerAngle,
             _steerAngleChangeStep * Time.deltaTime);
         
         foreach (var wheel in _wheels)
         {
-            wheel.SetSteerAngle(_currentAngle);
+            if(wheel.CanSteer)
+                wheel.SetSteerAngle(_currentAngle);
         }
     }
 }
